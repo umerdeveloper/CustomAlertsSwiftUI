@@ -60,7 +60,6 @@ struct ContentView: View {
             .opacity(showingAlert || alertWithTextField ? 0.5 : 1.0)
             
             
-            
             if showingAlert {
                     AlertView(showingAlert: $showingAlert)
             }

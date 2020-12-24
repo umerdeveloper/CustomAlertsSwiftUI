@@ -17,23 +17,13 @@ struct AlertWithTextField: View {
         ZStack {
             
             RoundedRectangle(cornerRadius: 12)
-                .frame(width: 300, height: 250)
             VStack {
-                Spacer()
-                Text("Message")
-                    .font(.headline)
-                    .foregroundColor(.black)
                 
-                Text("Please type message here...")
-                    .padding()
-                    .font(.caption)
-                    .foregroundColor(.black)
-                TextField("Placeholder", text: $text)
-                
-                Divider()
-                    .padding([.leading, .trailing], 10)
-                
-                Spacer()
+                VStack {
+                    TextField("message", text: $text)
+                        .foregroundColor(.black)
+                    Divider()
+                }.padding()
                 
                 Button(action: {
                     showingAlert = false
@@ -41,8 +31,8 @@ struct AlertWithTextField: View {
                     ZStack {
                         
                         RoundedRectangle(cornerRadius: 12)
-                            .frame(width: 180, height: 40)
-                        Text("Dismiss")
+                            .frame(width: 120, height: 40)
+                        Text("Submit")
                             .foregroundColor(.white)
                     }.foregroundColor(.blue)
                 })
@@ -51,7 +41,7 @@ struct AlertWithTextField: View {
             
         }
         .foregroundColor(.white)
-        .frame(width: 300, height: 260)
+        .frame(width: 300, height: 150)
         .shadow(radius: 5)
         .transition(
             AnyTransition
